@@ -1,37 +1,32 @@
 <template>
   <header>
     <a href="/">
-      Cine <br />
-      House
+      <img src="../assets/logo.png" alt="Logo" />
+      Cine House
     </a>
     <div>
-      <button>Login</button> |
-      <button>Criar Conta</button>
+      <button @click="redirectTo('/login')">Login</button> |
+      <button @click="redirectTo('/cadastro')">Criar Conta</button>
     </div>
   </header>
 </template>
 
 <script>
-export default {};
+import redirectTo from "@/func/RedirectTo";
+export default {
+  setup() {
+    return {
+      redirectTo,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 @import "../scss/var.scss";
 
 header {
-  height: 150px;
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  & a {
-    color: $red-var;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 20px;
-    text-transform: uppercase;
-  }
+  @include headerStyle;
   & div {
     & button {
       text-transform: uppercase;

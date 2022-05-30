@@ -20,23 +20,15 @@ export default {
   setup() {
     const state = reactive({
       movieData: null,
-      movieGenres: null,
       dataUrl:
         "/3/movie/popular?api_key=f19147dc14a96151bd1c0394b4b3b593&language=pt-BR&page=1",
-      genreUrl:
-        "/3/genre/movie/list?api_key=f19147dc14a96151bd1c0394b4b3b593&language=pt-BR",
     });
     async function getDataFromApi() {
       const req = await makeFetch.get(state.dataUrl);
       state.movieData = [...req.data.results];
     }
-    async function getGenreFromApi() {
-      const req = await makeFetch.get(state.genreUrl);
-      state.movieGenres = [...req.data.genres];
-    }
     onMounted(() => {
       getDataFromApi();
-      getGenreFromApi();
     });
     return {
       state,
@@ -52,6 +44,8 @@ export default {
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: $wine-var black;
   height: fit-content;
   width: 100%;
   margin: 50px 0;
@@ -69,5 +63,15 @@ export default {
       border-radius: 8px;
     }
   }
+}
+.movie-list::-webkit-scrollbar {
+  width: 12px;
+}
+.movie-list::-webkit-scrollbar-track {
+  background: black;
+}
+.movie-list::-webkit-scrollbar-thumb {
+  background-color: $wine-var;
+  border: 3px solid black;
 }
 </style>
