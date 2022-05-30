@@ -1,24 +1,16 @@
-# cine-house-project
+# Cine House
 
-## Project setup
-```
-npm install
-```
+> * ATENÇÃO: ESSE PROJETO SE ECONTRA EM PROCESSO DE DESENVOLVIMENTO, MAS VOCÊ PODE ACOMPAHAR O 'DESENROLAR'.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Este projeto está sendo criado com o framework Vue.js e pré-processador SASS. Estou usando algumas ferramentas que ajudrão no decorrer do desenvolvimento, como:
+    <ul>
+        <li>VueX</li>
+        <li>Linter</li>
+        <li>Vue Router</li>
+        <li>Axios</li>
+    </ul>
 
-### Compiles and minifies for production
-```
-npm run build
-```
+> Caso queira saber sobre a API, acesse o <a href='https://api.themoviedb.org'>link</a>
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<h1>Sobre o projeto:</h1>
+<p>Quero criar um projeto completo utilizando os conhecimento adquiridos por mim até aqui, mas espero poder aprender ainda mais durante o  processo. Ainda estou projetando a página inicial, mas quero fazer página de cadastro, login, descrição do filme, busca, entre outros.</p>
