@@ -40,3 +40,57 @@ $black-var: #0D0D0D;
         text-transform: uppercase;
     }
 }
+
+@mixin formStyle {
+    max-width: 600px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 8px;
+    margin: 40px auto;
+    padding: 10px;
+    & div {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        & input{
+            width: 300px;
+            margin: auto;
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid rgb(224, 223, 223);
+            background-color: rgb(220, 217, 217);
+        }
+        & button {
+            @include redirectBtn();
+            width: fit-content;
+            margin: auto;
+        }
+    }
+    @media (max-width: 600px) {
+        width: 85%;
+        & div {
+            & input {
+                width: 70%;
+            }
+        }
+    }
+
+}
+
+@mixin buttonLinkBoxStyle {
+    small {
+        & a {
+            color: #BF1304;
+            text-transform: uppercase;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

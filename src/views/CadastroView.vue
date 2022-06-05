@@ -7,7 +7,7 @@
 
 <script>
 import HeaderComponent from "@/components/cadastroLoginComponents/HeaderComponent.vue";
-import CadastroForm from "@/components/cadastroLoginComponents/cadastroForm.vue";
+import CadastroForm from "@/components/cadastroLoginComponents/CadastroForm.vue";
 export default {
   name: "CadastroView",
   components: {

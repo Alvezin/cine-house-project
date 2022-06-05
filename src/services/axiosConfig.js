@@ -5,4 +5,7 @@ const makeFetch = axios.create({
   headers: { "Content-Type": "application/json;charset=utf-8" },
 });
 
-export default makeFetch;
+const clientDB = axios.create({
+  baseURL: "http://localhost:3000",
+});
+export { clientDB, makeFetch };
