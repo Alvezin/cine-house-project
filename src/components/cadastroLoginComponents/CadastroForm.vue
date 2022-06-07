@@ -16,7 +16,7 @@
     <div>
       <label for="idade">Idade:</label>
       <input
-        type="number"
+        type="text"
         placeholder="Insira a idade..."
         v-model="state.idade"
       />
@@ -36,10 +36,14 @@
         placeholder="Insira uma senha..."
         v-model="state.senha"
       />
+      <small style="font-size: 10px"
+        >A senha deve conter: 1 letra maiuscula, 1 número e 1 caractere
+        especial.</small
+      >
     </div>
-    <message-component :msg="state.msg" cleanMsg="cleanMsg"/>
+    <message-component :msg="state.msg" cleanMsg="cleanMsg" />
     <div class="buttonLinkDiv">
-      <button @click.prevent="sendNewClientDB()">Cadastrar</button>
+      <button @click.prevent="dataValidation()">Cadastrar</button>
       <small>Ou fazer <a href="/login">fazer login</a></small>
     </div>
   </form>
@@ -48,12 +52,13 @@
 <script>
 import { reactive } from "@vue/reactivity";
 import { clientDB } from "@/services/axiosConfig";
+import validator from "validator";
 import redirectTo from "@/func/RedirectTo";
 import MessageComponent from "../MessageComponent.vue";
 export default {
   name: "CadastroForm",
-  components:{
-    MessageComponent
+  components: {
+    MessageComponent,
   },
   setup() {
     const state = reactive({
@@ -62,42 +67,69 @@ export default {
       idade: null,
       email: null,
       senha: null,
-      msg: null
+      msg: null,
     });
-    function newClient () {
+    function newClient() {
       return {
         nome: state.nome,
         sobrenome: state.sobrenome,
         idade: state.idade,
         email: state.email,
         senha: state.senha,
+      };
+    }
+    function cleanFields() {
+      state.nome = null;
+      state.sobrenome = null;
+      state.idade = null;
+      state.email = null;
+      state.senha = null;
+    }
+    async function sendDatatoDB() {
+      const req = await clientDB.post("/clientes", newClient());
+      state.msg = `O cadastro número ${req.data.id} foi Realizado com sucesso.`;
+    }
+    function dataValidation() {
+      try {
+        if (
+          state.nome === null ||
+          validator.isEmpty(state.nome, { ignore_whitespace: true }) ||
+          !validator.isAlpha(state.nome, "pt-BR") ||
+          !validator.isLength(state.nome, { min: 3 })
+        )
+          throw new Error("Digite um nome válido");
+
+        if (
+          state.sobrenome === null ||
+          validator.isEmpty(state.sobrenome, { ignore_whitespace: true }) ||
+          !validator.isAlpha(state.sobrenome, "pt-BR") ||
+          !validator.isLength(state.sobrenome, { min: 3 })
+        )
+          throw new Error("Insira um sobrenome válido");
+
+        if (state.idade === null || !validator.isNumeric(state.idade))
+          throw new Error("O campo idade aceita apenas números.");
+
+        if (state.email === null || !validator.isEmail(state.email))
+          throw new Error("Insira um E-mail válido");
+
+        if (state.senha === null || !validator.isStrongPassword(state.senha))
+          throw new Error("Digite uma senha válida");
+
+        sendDatatoDB();
+        cleanFields();
+        redirectTo("/login");
+      } catch (error) {
+        state.msg = error;
       }
     }
-    function cleanFields () {
-      state.nome = null
-      state.sobrenome = null
-      state.idade = null
-      state.email = null
-      state.senha = null
-    }
-    async function sendNewClientDB() { // continue aqui GABs 
-      try{
-        if(parseInt(state.idade) === NaN) throw new Error('O campo Idade aceita apenas números')
-        const req = await clientDB.post("/clientes", newClient());
-        state.msg = `O cadastro número ${req.data.id} foi Realizado com sucesso.`
-        cleanFields()
-        redirectTo('/login')
-      } catch (error){
-        state.msg = error
-      }
-    }
-    function cleanMsg () {
-      state.msg = null
+    function cleanMsg() {
+      state.msg = null;
     }
     return {
       state,
-      sendNewClientDB,
-      cleanMsg
+      dataValidation,
+      cleanMsg,
     };
   },
 };
@@ -108,7 +140,7 @@ export default {
 form {
   @include formStyle;
 }
-.buttonLinkDiv{
+.buttonLinkDiv {
   @include buttonLinkBoxStyle;
 }
 </style>

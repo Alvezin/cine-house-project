@@ -1,44 +1,5 @@
 {
   "clientes": [
-    {
-      "nome": "gabs",
-      "sobrenome": "alve",
-      "idade": 21,
-      "email": "ga@gmail.com",
-      "senha": "gabs3110",
-      "id": 1
-    },
-    {
-      "nome": null,
-      "sobrenome": null,
-      "idade": null,
-      "email": null,
-      "senha": null,
-      "id": 2
-    },
-    {
-      "nome": null,
-      "sobrenome": null,
-      "idade": null,
-      "email": null,
-      "senha": null,
-      "id": 3
-    },
-    {
-      "nome": null,
-      "sobrenome": null,
-      "idade": null,
-      "email": null,
-      "senha": null,
-      "id": 4
-    },
-    {
-      "nome": null,
-      "sobrenome": null,
-      "idade": null,
-      "email": null,
-      "senha": null,
-      "id": 5
-    }
+
   ]
 }
