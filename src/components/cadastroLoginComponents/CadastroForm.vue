@@ -89,7 +89,7 @@ export default {
       const req = await clientDB.post("/clientes", newClient());
       state.msg = `O cadastro número ${req.data.id} foi Realizado com sucesso.`;
     }
-    function dataValidation() {
+    async function dataValidation() {
       try {
         if (
           state.nome === null ||
@@ -101,8 +101,8 @@ export default {
 
         if (
           state.sobrenome === null ||
-          validator.isEmpty(state.sobrenome, { ignore_whitespace: true }) ||
-          !validator.isAlpha(state.sobrenome, "pt-BR") ||
+          validator.isEmpty(state.sobrenome, { ignore_whitespace: false }) ||
+          !validator.isAlpha(state.sobrenome, "pt-BR", { ignore: " " }) ||
           !validator.isLength(state.sobrenome, { min: 3 })
         )
           throw new Error("Insira um sobrenome válido");
@@ -116,7 +116,7 @@ export default {
         if (state.senha === null || !validator.isStrongPassword(state.senha))
           throw new Error("Digite uma senha válida");
 
-        sendDatatoDB();
+        await sendDatatoDB();
         cleanFields();
         redirectTo("/login");
       } catch (error) {

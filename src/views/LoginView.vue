@@ -1,11 +1,17 @@
 <template>
-  <h1>logim</h1>
-  <router-link to="/cadastro">jabxfvjbxkjcvkjxbvkjbxvja</router-link>
+  <header-component />
+  <login-component />
 </template>
 
 <script>
+import HeaderComponent from "@/components/cadastroLoginComponents/HeaderComponent.vue";
+import LoginComponent from "@/components/cadastroLoginComponents/LoginComponent.vue";
 export default {
   name: "LoginView",
+  components: {
+    HeaderComponent,
+    LoginComponent,
+  },
 };
 </script>
 

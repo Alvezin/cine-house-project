@@ -1,5 +1,12 @@
 {
   "clientes": [
-
+    {
+      "nome": "Gabriel",
+      "sobrenome": "Alves ",
+      "idade": "21",
+      "email": "g@gmail.com",
+      "senha": "G@briel1",
+      "id": 1
+    }
   ]
 }
