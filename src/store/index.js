@@ -1,9 +1,8 @@
 import { createStore } from "vuex";
+import client from "./client";
 
 export default createStore({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+  modules: {
+    client
+  },
 });

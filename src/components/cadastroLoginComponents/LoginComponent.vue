@@ -11,7 +11,7 @@
     </div>
 
     <div>
-      <label for="password">Crie uma senha:</label>
+      <label for="password">Senha:</label>
       <input
         type="password"
         placeholder="Insira uma senha..."
@@ -21,7 +21,7 @@
 
     <div class="buttonLinkDiv">
       <button @click.prevent="checkLogin()">Fazer Login</button>
-      <small>Ou fazer <a href="/cadastro">fazer cadastro</a></small>
+      <small>Ou fazer <a href="/cadastro">cadastro</a></small>
     </div>
     <message-component :msg="state.msg" :cleanMsg="cleanMsg" />
   </form>
@@ -30,6 +30,7 @@
 <script>
 import { reactive } from "@vue/reactivity";
 import { clientDB } from "@/services/axiosConfig";
+import redirectTo from "@/func/RedirectTo";
 import MessageComponent from "../MessageComponent.vue";
 export default {
   name: "LoginComponent",
@@ -47,6 +48,7 @@ export default {
       state.dataFromDB.forEach((element) => {
         if (element.email === state.email && element.senha === state.senha) {
           state.msg = "Usuário autenticado";
+          redirectTo(`/main/${element.id}/painel`);
         } else {
           state.msg = "Email ou senha incorretos";
         }

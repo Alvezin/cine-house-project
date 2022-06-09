@@ -12,31 +12,14 @@
 </template>
 
 <script>
-import redirectTo from "@/func/RedirectTo";
 export default {
-  setup() {
-    return {
-      redirectTo,
-    };
-  },
+  name: "MainHeader",
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../scss/var.scss";
-
+@import "@/scss/var.scss";
 header {
   @include headerStyle;
-  & div {
-    & button {
-      text-transform: uppercase;
-      padding: 5px 7px;
-      cursor: pointer;
-      background-color: black;
-      border: none;
-      color: white;
-      border-radius: 8px;
-    }
-  }
 }
 </style>
