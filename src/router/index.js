@@ -32,8 +32,8 @@ const routes = [
         path: "painel",
         name: "painel",
         component: () => import("../views/UserIndexView.vue"),
-      }
-    ]
+      },
+    ],
   },
 ];
 
