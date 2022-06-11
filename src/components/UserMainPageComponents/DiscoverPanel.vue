@@ -1,11 +1,14 @@
 <template>
   <section>
     <h2>Descubra algo novo</h2>
-    <movie-card
-      v-for="movie in state.discoverMovies"
-      :key="movie.id"
-      :movieData="movie"
-    />
+    <div class="movie-list">
+      <movie-card
+        v-for="movie in state.discoverMovies"
+        :key="movie.id"
+        :movieData="movie"
+        class="cards"
+      />
+    </div>
   </section>
 </template>
 
@@ -35,4 +38,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "@/scss/movieListHorizontal.scss";
+@include movieListHorizontal;
+section {
+  margin: 50px 0;
+}
+h2 {
+  float: left;
+  margin: 0 0 10px 10px;
+}
+</style>

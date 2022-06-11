@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div>
-      <small> Nota: {{ movieData.vote_average }} </small>
-      <small> {{ movieData.vote_count }} votos </small>
+    <div class="votes">
+      <small> {{ movieData.vote_average }} &star; </small>
+      <small> {{ movieData.vote_count }} 👍 </small>
     </div>
     <h3>{{ movieData.title }}</h3>
     <img
@@ -20,4 +20,20 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "@/scss/var.scss";
+.votes {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+button {
+  @include redirectBtn;
+}
+img {
+  border-radius: 8px;
+}
+h3 {
+  font-size: 17px;
+}
+</style>

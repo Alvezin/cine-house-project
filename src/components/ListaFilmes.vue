@@ -38,40 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../scss/var.scss";
+@import "@/scss/movieListHorizontal.scss";
 
-.movie-list {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  scrollbar-width: thin;
-  scrollbar-color: $wine-var black;
-  height: fit-content;
-  width: 100%;
-  margin: 50px 0;
-  box-shadow: inset 0 5px 5px black;
-  padding: 10px;
-  & .cards {
-    width: 350px;
-    height: 400px;
-    margin: 0 20px;
-    box-shadow: 0 5px 5px black;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: black;
-    & img {
-      border-radius: 8px;
-    }
-  }
-}
-.movie-list::-webkit-scrollbar {
-  width: 12px;
-}
-.movie-list::-webkit-scrollbar-track {
-  background: black;
-}
-.movie-list::-webkit-scrollbar-thumb {
-  background-color: $wine-var;
-  border: 3px solid black;
-}
+@include movieListHorizontal;
 </style>
