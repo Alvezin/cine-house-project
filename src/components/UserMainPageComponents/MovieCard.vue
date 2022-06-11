@@ -9,14 +9,19 @@
       :src="`https://image.tmdb.org/t/p/w200/${movieData.poster_path}`"
       alt="Poster do filme"
     />
-    <button>ver</button>
+    <router-link :to="`movie/${movieData.id}_${movieData.title}`">Conferir</router-link>
   </div>
 </template>
 
 <script>
+import redirectTo from '@/func/RedirectTo';
 export default {
   name: "MovieCard",
   props: ["movieData"],
+  setup () {
+    return {
+    }
+  }
 };
 </script>
 

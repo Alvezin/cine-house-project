@@ -40,7 +40,6 @@ export default {
 <style lang="scss">
 @import "@/scss/var.scss";
 main {
-  min-height: 600px;
   color: white;
   background-color: $black-var;
 }

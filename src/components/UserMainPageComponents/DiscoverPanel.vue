@@ -9,6 +9,42 @@
         class="cards"
       />
     </div>
+    <h2> Para assitir de madrugada </h2>
+    <div class="movie-list">
+      <movie-card
+        v-for="movie in state.horrorMovies"
+        :key="movie.id"
+        :movieData="movie"
+        class="cards"
+      />
+    </div>
+    <h2> Para a Criançada </h2>
+    <div class="movie-list">
+      <movie-card
+        v-for="movie in state.animationMovies"
+        :key="movie.id"
+        :movieData="movie"
+        class="cards"
+      />
+    </div>
+    <h2> Um Pouquinho de Ação  </h2>
+    <div class="movie-list">
+      <movie-card
+        v-for="movie in state.actionMovies"
+        :key="movie.id"
+        :movieData="movie"
+        class="cards"
+      />
+    </div>
+    <h2> Para Rir Até não Querer Mais </h2>
+    <div class="movie-list">
+      <movie-card
+        v-for="movie in state.comedyMovies"
+        :key="movie.id"
+        :movieData="movie"
+        class="cards"
+      />
+    </div>
   </section>
 </template>
 
@@ -25,11 +61,27 @@ export default {
   setup() {
     const state = reactive({
       discoverMovies: [],
+      horrorMovies: [],
+      animationMovies: [],
+      actionMovies: [],
+      comedyMovies: [],
     });
     const store = useStore();
+
+    state.discoverMovies = computed(() => store.state.movies.discoverMovies);
+    state.horrorMovies = computed(() => store.state.movies.horrorMovies);
+    state.animationMovies = computed(() => store.state.movies.animationMovies);
+    state.actionMovies = computed(() => store.state.movies.actionMovies);
+    state.comedyMovies = computed(() => store.state.movies.comedyMovies);
+
+
+
     onMounted(() => {
       store.dispatch("getDiscover");
-      state.discoverMovies = computed(() => store.state.movies.discoverMovies);
+      store.dispatch("getHorrorMovies");
+      store.dispatch("getAnimationMovies");
+      store.dispatch("getActionMovies");
+      store.dispatch("getComedyMovies");
     });
     return {
       state,
@@ -43,9 +95,10 @@ export default {
 @include movieListHorizontal;
 section {
   margin: 50px 0;
+  height: fit-content;
 }
 h2 {
   float: left;
-  margin: 0 0 10px 10px;
+  margin: 30px 0 10px 10px;
 }
 </style>

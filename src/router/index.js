@@ -33,6 +33,11 @@ const routes = [
         name: "painel",
         component: () => import("../views/UserIndexView.vue"),
       },
+      {
+        path: "movie/:movieId_:movieName",
+        name:  "details",
+        component: () => import("../views/MovieDetails.vue")
+      }
     ],
   },
 ];
