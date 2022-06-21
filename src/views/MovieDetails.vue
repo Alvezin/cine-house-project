@@ -1,10 +1,16 @@
 <template>
-  <h1>filme {{ $route.params.movieId }}</h1>
+  <main>
+    <MainDataFromMovie />
+  </main>
 </template>
 
 <script>
+import MainDataFromMovie from "@/components/movieDetailsComponents/MainDataFromMovie.vue";
 export default {
   name: "MovieDetails",
+  components: {
+    MainDataFromMovie,
+  },
 };
 </script>
 

@@ -6,6 +6,6 @@ export default createStore({
   modules: {
     client,
     movies,
-    movieDetails
+    movieDetails,
   },
 });
