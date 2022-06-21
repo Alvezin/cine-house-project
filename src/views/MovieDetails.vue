@@ -1,5 +1,5 @@
 <template>
-  <h1>filme {{ $route.params.movieName }}</h1>
+  <h1>filme {{ $route.params.movieId }}</h1>
 </template>
 
 <script>

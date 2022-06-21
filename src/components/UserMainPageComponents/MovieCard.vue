@@ -6,13 +6,18 @@
     </div>
     <router-link
       class="redirectLink"
-      :to="`movie/${movieData.id}_${movieData.title}`"
-      ><h3>{{ movieData.title }}</h3></router-link
+      :to="`movie/${movieData.id}`"
+      ><h4>{{ movieData.title }}</h4></router-link
     >
-    <img
-      :src="`https://image.tmdb.org/t/p/w200/${movieData.poster_path}`"
-      alt="Poster do filme"
-    />
+    <router-link
+      :to="`movie/${movieData.id}`"
+      class="redirectImg"
+    >
+      <img
+        :src="`https://image.tmdb.org/t/p/w200/${movieData.poster_path}`"
+        alt="Poster do filme"
+      />
+    </router-link>
   </div>
 </template>
 
@@ -35,10 +40,25 @@ export default {
 }
 .redirectLink {
   text-decoration: none;
+  color: white;
+  &:hover {
+    text-decoration: underline;
+  }
 }
+
 img {
   border-radius: 8px;
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
 }
+.redirectImg {
+  &:hover {
+    filter: grayscale(30%);
+    -webkit-filter: grayscale(30%);
+    transition: 0.5s;
+  }
+}
+
 h3 {
   font-size: 17px;
 }

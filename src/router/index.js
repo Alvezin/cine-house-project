@@ -34,7 +34,7 @@ const routes = [
         component: () => import("../views/UserIndexView.vue"),
       },
       {
-        path: "movie/:movieId_:movieName",
+        path: "movie/:movieId",
         name: "details",
         component: () => import("../views/MovieDetails.vue"),
       },

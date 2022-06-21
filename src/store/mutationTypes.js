@@ -6,3 +6,7 @@ export const types = {
   GET_COMEDY_MOVIES: "GET_COMEDY_MOVIES",
   GET_ACTION_MOVIES: "GET_ACTION_MOVIES",
 };
+
+export const movieDetailsTypes = {
+  SET_DATA_TO_STATE: "SET_DATA_TO_STATE",
+};
