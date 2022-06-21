@@ -1,13 +1,11 @@
 <template>
-    <h1> filme {{ $route.params.movieName }} </h1>
+  <h1>filme {{ $route.params.movieName }}</h1>
 </template>
 
 <script>
 export default {
-  name: "MovieDetails"
-}
+  name: "MovieDetails",
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

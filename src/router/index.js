@@ -35,9 +35,9 @@ const routes = [
       },
       {
         path: "movie/:movieId_:movieName",
-        name:  "details",
-        component: () => import("../views/MovieDetails.vue")
-      }
+        name: "details",
+        component: () => import("../views/MovieDetails.vue"),
+      },
     ],
   },
 ];

@@ -2,7 +2,7 @@
   <header>
     <a href="/">
       <img src="@/assets/logo.png" alt="Logo" />
-      Cine housinho
+      Cine House
     </a>
     <div>
       <button @click="redirectTo('/login')">Login</button> |

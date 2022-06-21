@@ -9,7 +9,7 @@
         class="cards"
       />
     </div>
-    <h2> Para assitir de madrugada </h2>
+    <h2>Para assitir de madrugada</h2>
     <div class="movie-list">
       <movie-card
         v-for="movie in state.horrorMovies"
@@ -18,7 +18,7 @@
         class="cards"
       />
     </div>
-    <h2> Para a Criançada </h2>
+    <h2>Para a Criançada</h2>
     <div class="movie-list">
       <movie-card
         v-for="movie in state.animationMovies"
@@ -27,7 +27,7 @@
         class="cards"
       />
     </div>
-    <h2> Um Pouquinho de Ação  </h2>
+    <h2>Um Pouquinho de Ação</h2>
     <div class="movie-list">
       <movie-card
         v-for="movie in state.actionMovies"
@@ -36,7 +36,7 @@
         class="cards"
       />
     </div>
-    <h2> Para Rir Até não Querer Mais </h2>
+    <h2>Para Rir Até não Querer Mais</h2>
     <div class="movie-list">
       <movie-card
         v-for="movie in state.comedyMovies"
@@ -73,8 +73,6 @@ export default {
     state.animationMovies = computed(() => store.state.movies.animationMovies);
     state.actionMovies = computed(() => store.state.movies.actionMovies);
     state.comedyMovies = computed(() => store.state.movies.comedyMovies);
-
-
 
     onMounted(() => {
       store.dispatch("getDiscover");
