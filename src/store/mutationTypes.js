@@ -11,3 +11,7 @@ export const movieDetailsTypes = {
   SET_DATA_TO_STATE: "SET_DATA_TO_STATE",
   SET_CAST_TO_STATE: "SET_CAST_TO_STATE",
 };
+
+export const trailerTypes = {
+  SET_TRAILER: "SET_TRAILER",
+};

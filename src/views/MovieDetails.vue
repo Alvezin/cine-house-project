@@ -1,6 +1,7 @@
 <template>
   <main>
     <MainDataFromMovie />
+    <trailer-component />
     <cast-list />
   </main>
 </template>
@@ -8,6 +9,7 @@
 <script>
 import MainDataFromMovie from "@/components/movieDetailsComponents/MainDataFromMovie.vue";
 import CastList from "@/components/movieDetailsComponents/CastList.vue";
+import TrailerComponent from "@/components/movieDetailsComponents/TrailerComponent.vue";
 import { onMounted } from "@vue/runtime-core";
 import { useStore } from "vuex";
 import { useRoute } from "vue-router";
@@ -16,6 +18,7 @@ export default {
   components: {
     MainDataFromMovie,
     CastList,
+    TrailerComponent,
   },
   setup() {
     const store = useStore();
@@ -23,6 +26,7 @@ export default {
     onMounted(async () => {
       await store.dispatch("getMovieData", route.params.movieId);
       await store.dispatch("getCast");
+      await store.dispatch("getTrailerData", route.params.movieId);
     });
   },
 };
