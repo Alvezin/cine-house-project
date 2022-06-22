@@ -1,37 +1,32 @@
 <template>
   <div>
     <section
-        :style="{
+      :style="{
         backgroundImage: `url(https://image.tmdb.org/t/p/original/${state.image})`,
-        }"
+      }"
     >
-        <h1 class="titulo">{{ state.movie.title }}</h1>
+      <h1 class="titulo">{{ state.movie.title }}</h1>
     </section>
-    <movie-description :movie="state.movie"/>
+    <movie-description :movie="state.movie" />
   </div>
 </template>
 
 <script>
-import MovieDescription from "./MovieDescription.vue"
+import MovieDescription from "./MovieDescription.vue";
 import { reactive } from "@vue/reactivity";
 import { useStore } from "vuex";
-import { useRoute } from "vue-router";
-import { computed, onMounted } from "@vue/runtime-core";
+import { computed } from "@vue/runtime-core";
 export default {
   name: "MainDataFromMovie",
   components: {
-    MovieDescription
+    MovieDescription,
   },
   setup() {
     const state = reactive({
       movie: {},
       image: "",
     });
-    const route = useRoute();
     const store = useStore();
-    onMounted(() => {
-      store.dispatch("getMovieData", route.params.movieId);
-    });
     state.movie = computed(() => store.state.movieDetails.movie);
     state.image = computed(() => state.movie.backdrop_path);
     return {
