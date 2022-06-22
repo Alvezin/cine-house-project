@@ -28,4 +28,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+@import "@/scss/var.scss";
+main {
+  background-color: $black-var;
+  color: $white-var;
+}
+</style>
