@@ -11,7 +11,7 @@ const routes = [
     path: "/about",
     name: "about",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+      import("../views/AboutView.vue"),
   },
   {
     path: "/cadastro",
@@ -37,6 +37,13 @@ const routes = [
         path: "movie/:movieId",
         name: "details",
         component: () => import("../views/MovieDetails.vue"),
+        children: [
+          {
+            path: "detalhe",
+            name: "detail",
+            component: () => import("../views/DetailsView.vue")
+          },
+        ],
       },
     ],
   },
