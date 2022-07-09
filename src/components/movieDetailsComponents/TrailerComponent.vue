@@ -4,7 +4,8 @@
     <section class="movie-list">
       <iframe
         class="cards"
-        v-for="video in state.trailerData" :key="video.id"
+        v-for="video in state.trailerData"
+        :key="video.id"
         width="560"
         height="315"
         :src="`https://www.youtube.com/embed/${video.key}`"

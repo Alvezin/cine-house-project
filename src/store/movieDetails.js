@@ -5,12 +5,14 @@ export default {
   state: () => ({
     movie: [],
     movieId: null,
+    imdbId: null,
     cast: [],
   }),
   mutations: {
     SET_DATA_TO_STATE(state, payload) {
       state.movie = payload;
       state.movieId = payload.id;
+      state.imdbId = payload.imdb_id;
     },
     SET_CAST_TO_STATE(state, payload) {
       state.cast = [...payload];

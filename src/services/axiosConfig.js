@@ -8,4 +8,8 @@ const makeFetch = axios.create({
 const clientDB = axios.create({
   baseURL: "http://localhost:3000",
 });
-export { clientDB, makeFetch };
+
+const useWarezcdn = axios.create({
+  baseURL: "https://embed.warezcdn.com/filme/",
+});
+export { clientDB, makeFetch, useWarezcdn };
