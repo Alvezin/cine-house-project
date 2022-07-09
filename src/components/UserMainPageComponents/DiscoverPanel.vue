@@ -92,7 +92,6 @@ export default {
 @import "@/scss/movieListHorizontal.scss";
 @include movieListHorizontal;
 section {
-  margin: 50px 0;
   height: fit-content;
 }
 h2 {

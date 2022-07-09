@@ -20,9 +20,7 @@ export default {
     CastList,
     TrailerComponent,
   },
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

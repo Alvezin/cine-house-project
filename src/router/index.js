@@ -10,8 +10,7 @@ const routes = [
   {
     path: "/about",
     name: "about",
-    component: () =>
-      import("../views/AboutView.vue"),
+    component: () => import("../views/AboutView.vue"),
   },
   {
     path: "/cadastro",
@@ -41,7 +40,7 @@ const routes = [
           {
             path: "detalhe",
             name: "detail",
-            component: () => import("../views/DetailsView.vue")
+            component: () => import("../views/DetailsView.vue"),
           },
         ],
       },

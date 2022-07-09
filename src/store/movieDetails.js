@@ -25,7 +25,9 @@ export default {
           `/3/movie/${payload}?api_key=f19147dc14a96151bd1c0394b4b3b593&language=pt-BR`
         );
         commit(SET_DATA_TO_STATE, req.data);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     },
     async getCast({ commit, state }) {
       try {
@@ -33,7 +35,9 @@ export default {
           `/3/movie/${state.movieId}/credits?api_key=f19147dc14a96151bd1c0394b4b3b593&language=pt-BR`
         );
         commit(SET_CAST_TO_STATE, req.data.cast);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };
