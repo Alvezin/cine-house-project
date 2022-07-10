@@ -22,7 +22,6 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     height: 50vh;
-    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: end;
