@@ -2,9 +2,9 @@
   <main>
     <MainDataFromMovie />
     <button-component />
-    <trailer-component />
-    <cast-list />
-    <similar-movies-comp />
+    <trailer-component class="similar" />
+    <cast-list class="similar" />
+    <similar-movies-comp class="similar" />
   </main>
 </template>
 
@@ -26,4 +26,8 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.similar {
+  margin-top: 30vh;
+}
+</style>

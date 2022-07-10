@@ -1,6 +1,10 @@
 <template>
-  <header-component />
-  <login-component />
+  <main>
+    <header-component />
+    <section>
+      <login-component />
+    </section>
+  </main>
 </template>
 
 <script>
@@ -15,4 +19,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+</style>

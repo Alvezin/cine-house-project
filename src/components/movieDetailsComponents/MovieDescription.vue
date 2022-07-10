@@ -40,6 +40,8 @@ export default {
     text-indent: 15px;
     & h4 {
       margin: 0 0 0 10px;
+      text-indent: 0;
+      line-height: 30px;
     }
     & .genre-list {
       display: flex;
@@ -51,6 +53,12 @@ export default {
   }
   & img {
     border-radius: 8px;
+  }
+}
+@media screen and (max-width: 588px) {
+  .flex-box {
+    flex-direction: column;
+    margin: 30px 0;
   }
 }
 </style>

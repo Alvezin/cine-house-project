@@ -39,9 +39,9 @@ export default {
       () => route.params.movieId,
       async () => await getSimilarMovies(),
       {
-        deep: true
+        deep: true,
       }
-    )
+    );
     return {
       state,
     };

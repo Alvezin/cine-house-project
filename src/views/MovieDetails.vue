@@ -14,24 +14,24 @@ export default {
     const store = useStore();
     const route = useRoute();
 
-    async function getData(){
+    async function getData() {
       await store.dispatch("getMovieData", route.params.movieId);
       await store.dispatch("getCast");
       await store.dispatch("getTrailerData", route.params.movieId);
-      window.scrollTo(0, 0)
-    };
+      window.scrollTo(0, 0);
+    }
 
     onMounted(async () => {
-      await getData()
+      await getData();
     });
-    
+
     watch(
       () => route.params.movieId,
       async () => await getData(),
       {
-        deep: true
+        deep: true,
       }
-    )
+    );
   },
 };
 </script>

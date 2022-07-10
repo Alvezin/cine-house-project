@@ -21,7 +21,8 @@ section {
     background-image: url("../assets/img/resident-evil.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 50vh;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: end;

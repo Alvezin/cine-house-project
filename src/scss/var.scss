@@ -42,7 +42,7 @@ $black-var: #0D0D0D;
 }
 
 @mixin formStyle {
-    max-width: 600px;
+    min-width: 85vw;
     height: fit-content;
     display: flex;
     flex-direction: column;

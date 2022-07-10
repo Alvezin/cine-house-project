@@ -46,7 +46,6 @@ export default {
 @import "../scss/var.scss";
 body {
   background-color: $black-var;
-  height: 1fr;
   color: $white-var;
   & p {
     margin: 50px;
@@ -55,7 +54,6 @@ body {
     margin: 30px;
   }
   & .content-div {
-    width: 500px;
     height: 250px;
     margin: auto;
     & button {
