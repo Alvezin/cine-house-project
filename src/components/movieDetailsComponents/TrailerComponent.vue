@@ -2,7 +2,11 @@
   <div>
     <h4>Trailers</h4>
     <section class="movie-list">
+      <h3
+        v-if="state.trailerData.length === 0"
+      >Trailer Indisponivel</h3>
       <iframe
+        v-else
         class="cards"
         v-for="video in state.trailerData"
         :key="video.id"

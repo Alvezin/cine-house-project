@@ -1,3 +1,3 @@
 export default function redirectTo(string) {
-  window.location.href = string;
+  window.open(string, "_blank").focus();
 }

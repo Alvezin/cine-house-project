@@ -4,10 +4,15 @@
       <small> {{ movieData.vote_average }} &star; </small>
       <small> {{ movieData.vote_count }} 👍 </small>
     </div>
-    <router-link class="redirectLink" :to="`movie/${movieData.id}/detalhe`"
+    <router-link
+      class="redirectLink"
+      :to="`/main/${$route.params.id}/movie/${movieData.id}/detalhe`"
       ><h4>{{ movieData.title }}</h4></router-link
     >
-    <router-link :to="`movie/${movieData.id}/detalhe`" class="redirectImg">
+    <router-link
+      :to="`/main/${$route.params.id}/movie/${movieData.id}/detalhe`"
+      class="redirectImg"
+    >
       <img
         :src="`https://image.tmdb.org/t/p/w200/${movieData.poster_path}`"
         alt="Poster do filme"

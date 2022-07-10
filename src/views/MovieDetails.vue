@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { onMounted } from "@vue/runtime-core";
+import { onMounted, watch } from "@vue/runtime-core";
 import { useStore } from "vuex";
 import { useRoute } from "vue-router";
 export default {
@@ -13,11 +13,25 @@ export default {
   setup() {
     const store = useStore();
     const route = useRoute();
-    onMounted(async () => {
+
+    async function getData(){
       await store.dispatch("getMovieData", route.params.movieId);
       await store.dispatch("getCast");
       await store.dispatch("getTrailerData", route.params.movieId);
+      window.scrollTo(0, 0)
+    };
+
+    onMounted(async () => {
+      await getData()
     });
+    
+    watch(
+      () => route.params.movieId,
+      async () => await getData(),
+      {
+        deep: true
+      }
+    )
   },
 };
 </script>

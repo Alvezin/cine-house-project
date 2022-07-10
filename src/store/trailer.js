@@ -3,7 +3,7 @@ import { trailerTypes } from "./mutationTypes";
 const { SET_TRAILER } = trailerTypes;
 export default {
   state: () => ({
-    trailerData: null,
+    trailerData: [],
   }),
   mutations: {
     SET_TRAILER(state, payload) {
