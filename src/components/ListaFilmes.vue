@@ -14,7 +14,7 @@
 <script>
 import { reactive } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
-import makeFetch from "@/services/axiosConfig";
+import { makeFetch } from "@/services/axiosConfig";
 export default {
   name: "ListaFilmes",
   setup() {

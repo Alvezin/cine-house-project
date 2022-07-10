@@ -64,6 +64,7 @@ body {
     & ul {
       & li {
         margin: 10px 0;
+        list-style: none;
       }
     }
   }
