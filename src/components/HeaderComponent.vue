@@ -5,8 +5,8 @@
       Cine House
     </a>
     <div>
-      <button @click="redirectTo('/login')">Login</button> |
-      <button @click="redirectTo('/cadastro')">Criar Conta</button>
+      <button @click="redirectTo('/')">Login</button> |
+      <button @click="redirectTo('/')">Criar Conta</button>
     </div>
   </header>
 </template>

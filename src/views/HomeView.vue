@@ -17,7 +17,7 @@
         <li>Obtenha informações sobre seus filmes favoritos!</li>
         <li>E muito mais!</li>
       </ul>
-      <button @click="redirectTo('/cadastro')">Vamos lá</button>
+      <button @click="redirectTo('/main/1/painel')">Vamos lá</button>
     </div>
   </body>
 </template>

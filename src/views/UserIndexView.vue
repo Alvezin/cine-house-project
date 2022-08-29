@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1>
-      Seja Bem Vindo, <strong> {{ state.client.nome }} </strong>
+      Seja Bem Vindo!
     </h1>
     <discover-panel />
   </main>
