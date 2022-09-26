@@ -6,9 +6,9 @@
 
 # Links
 
-[Landing Page](https://cine-house-project-gjmxhhzjh-alvezin.vercel.app/)
+[Landing Page](https://cine-house-project.vercel.app/)
 
-[Página principal do user (caso esteja com pressa)](https://cine-house-project-gjmxhhzjh-alvezin.vercel.app/main/1/painel)
+[Página principal do user (caso esteja com pressa)](https://cine-house-project.vercel.app/main/1/painel)
 
 # O que já está concluído?
 <p>
