@@ -1,8 +1,6 @@
 <template>
   <main>
-    <h1>
-      Seja Bem Vindo!
-    </h1>
+    <h1>Seja Bem Vindo!</h1>
     <discover-panel />
   </main>
 </template>
